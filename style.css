@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Section */
+
+section {
+    width: 100%;
+    background-color: #222;
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box-item {
+    width: 31%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 10px;
+}
+
+
+.box-item img {
+    width: 100%;
+    height: 100%;
+    /* padding: 20px 0; */
+}
+
+.box-item h1.x {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    color: white;
+    font-size:35px; 
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-top: 25px;
+    transition: all 0.6s ease;
+}
+
+.box-item h1.x span {
+    font-weight:900;
+}
+
+p {
+    position: absolute;
+    top: 40%;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    transform: translateY(25px);
+    opacity: 0;
+    transition: all .6s ease;
+}   
+
+.box-item-inner {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    color: black;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .6s ease;
+}
+
+.box-item-inner h1 {
+    color: black;
+    font-size: 20px;
+    text-align: left;
+    font-weight: lighter;
+    margin-left: 5px;
+    top: 20%;
+    position: relative;
+}
+
+.box-item-inner span {
+    font-weight: 700;
+}
+
+.box-item-inner span:nth-of-type(2) {
+    float: right;
+}
+
+.box-item-inner span:nth-of-type(2) i {
+    margin: 0 5px;
+}
+
+.box-item-inner span:nth-of-type(2) i:nth-of-type(3) {
+    padding-right: 10px;
+}
+
+.box-item:hover::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: black;
+   opacity: 0.1;
+}
+
+.box-item:hover .box-item-inner {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.box-item:hover p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.box-item:hover .x {
+    margin-top: 0px;
+}
+
+
+
+/* Responsive Start */
+
+@media (max-width:767px) {
+    .box {
+        justify-content: center;
+    }
+   
+    .box-item {
+        width: 100%;
+    }
+}
+
+@media (min-width:768px) and (max-width:926px) {
+    .box-item {
+        width: 45%;
+    }
+}
+
+@media (min-width:926px) {
+    .box-item {
+        width: 30%;
+    }
+}
